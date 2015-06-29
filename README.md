@@ -1,4 +1,5 @@
 # facform (Real name TBC)
+-[![Build Status](https://travis-ci.org/foundersandcoders/facform.svg)](https://travis-ci.org/foundersandcoders/facform)
 Week 8 project for FAC5 to create a learning platform for Founders & Coders.
 
 ## Production
