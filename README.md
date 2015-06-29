@@ -8,11 +8,14 @@ For ease of use, this production section will be at the top of the README until 
 Technically: everyone. However the person responsible for any issues with the Repo (merge conflicts, broken branches, bad dependencies, etc) is [Jack M](https://github.com/jackpandas). In order to be able to help, Jack will be doing his best to keep up to date with all pull requests to the Master branch, so please let him know if/when your team has code to contribute.
 #### Rules
 + Anyone pushing to the master branch from their local computer has to buy a round of drinks for everyone on friday.
-+ Anyone merging their own pull request to the master branch has to buy a round of drinks for everyone on friday.
++ Anyone merging their own pull request to the master branch has to buy a round of drinks for everyone on friday.  
+
 #### Resources
+
 Pivotal Tracker: Project tracking located [here](https://www.pivotaltracker.com/n/projects/1376992)
 Project Wireframes: Located at [Google Slides](https://docs.google.com/presentation/d/1cWb6hFbg6THoIsz7FQiDJXwGlKGLkmeXTYfaZad_bc4/edit?pli=1#slide=id.ga28673939_0_1)
-More to come...
+More to come... 
+
 #### Production Standards  
 (These need votes 10am Tues)
 
