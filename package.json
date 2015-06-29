@@ -1,0 +1,40 @@
+{
+  "name": "facform",
+  "version": "1.0.0",
+  "description": "FAC online",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/*.js",
+    "start": "nodemon server.js",
+    "coverage": "./node_modules/.bin/istanbul cover ./test/*.js && ./node_modules/.bin/istanbul check-coverage --statements 90 --functions 100 --lines 90 --branches 85",
+    "jshint": "jshint -c .jshintrc --exclude-path .gitignore ."
+  },
+  "pre-commit": [
+    "jshint",
+    "coverage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foundersandcoders/facform.git"
+  },
+  "keywords": [
+    "online",
+    "learning",
+    "collaboration",
+    "pair"
+  ],
+  "author": "Founders & Coders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foundersandcoders/facform/issues"
+  },
+  "homepage": "https://github.com/foundersandcoders/facform",
+  "devDependencies": {
+    "istanbul": "^0.3.17",
+    "jshint": "^2.8.0",
+    "pre-commit": "^1.0.10"
+  }
+}
