@@ -1,6 +1,7 @@
 * {
   border: 1px solid black;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 body {
@@ -19,6 +20,14 @@ body {
   background-color: $grey;
   height: 90vh;
 
+
+  #container-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
   h1#mission {
     color: white;
     font-size: 4.5em;
@@ -32,11 +41,12 @@ body {
     background-color: $mainGreen;
     border: none;
     font-size: 26px;
-    height: 12%;
-    width: 20%;
+    height: 70px;
+    width: 250px;
     margin: 0 auto;
+    // position: relative;
+    // top: 150px;
   }
-
 }
 
 #two {
@@ -45,18 +55,30 @@ body {
   font-weight: normal;
   text-align: center;
 
+  h2 {
+    padding: 40px;
+  }
+
   #info-container {
     margin: 0 auto;
     padding: 0;
-    width: 95%;
+    width: 99%;
     text-align: center;
+    height: 75%;
   }
 
   #info1,#info2,#info3 {
     display: inline-block;
     width: 30%;
-    height: 300px;
+    height: 100%;
     font-size: 28px;
     text-align: center;
   }
+}
+
+#info1 {
+  margin-right: 30px;
+}
+#info3 {
+  margin-left: 30px;
 }

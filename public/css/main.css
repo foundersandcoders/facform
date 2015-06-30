@@ -1,6 +1,7 @@
 * {
   border: 1px solid black;
-  padding: 10px; }
+  padding: 10px;
+  box-sizing: border-box; }
 
 body {
   font-family: verdana, sans-serif;
@@ -15,6 +16,10 @@ body {
 #one {
   background-color: #3E4E5A;
   height: 90vh; }
+  #one #container-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
   #one h1#mission {
     color: white;
     font-size: 4.5em;
@@ -26,8 +31,8 @@ body {
     background-color: #37BEC0;
     border: none;
     font-size: 26px;
-    height: 12%;
-    width: 20%;
+    height: 70px;
+    width: 250px;
     margin: 0 auto; }
 
 #two {
@@ -35,17 +40,26 @@ body {
   height: 100vh;
   font-weight: normal;
   text-align: center; }
+  #two h2 {
+    padding: 40px; }
   #two #info-container {
     margin: 0 auto;
     padding: 0;
-    width: 95%;
-    text-align: center; }
+    width: 99%;
+    text-align: center;
+    height: 75%; }
   #two #info1, #two #info2, #two #info3 {
     display: inline-block;
     width: 30%;
-    height: 300px;
+    height: 100%;
     font-size: 28px;
     text-align: center; }
+
+#info1 {
+  margin-right: 30px; }
+
+#info3 {
+  margin-left: 30px; }
 
 footer {
   background-color: #37BEC0;
