@@ -19,6 +19,7 @@ var toCover = require('../toCover');
 describe('stop istanbul complaining', function(){
   it('can be deleted after we have real tests', function(done){
     expect(toCover());
+    done();
   });
 });
 
