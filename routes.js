@@ -2,7 +2,7 @@ var r = require('rethinkdb');
 
 var connection = null;
 
-r.connect( {host: 'localhost', port: 28015, db: 'Facform'}, function(err, conn) {
+r.connect( {host: '127.0.0.2', port: 28015, db: 'Facform'}, function(err, conn) {
     if (err) {
         console.log('ERROR');
         throw err;
