@@ -33,12 +33,15 @@
   },
   "homepage": "https://github.com/foundersandcoders/facform",
   "devDependencies": {
+    "foreman": "^1.4.1",
     "istanbul": "^0.3.17",
     "jshint": "^2.8.0",
     "pre-commit": "^1.0.10",
     "shot": "^1.5.3"
   },
   "dependencies": {
+    "hapi": "^8.6.1",
+    "hapi-auth-cookie": "^3.0.1",
     "jsdoc": "^3.3.2"
   }
 }
