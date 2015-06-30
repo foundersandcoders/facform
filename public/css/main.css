@@ -1,3 +1,27 @@
+body {
+  background-color: #eee; }
 
+#container {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto; }
+
+#one {
+  background-color: #3E4E5A;
+  height: 600px; }
+  #one #mission {
+    color: white;
+    text-align: center;
+    text-transform: uppercase; }
+  #one #start {
+    background-color: #37BEC0;
+    border: none;
+    font-size: 16px;
+    width: 20%;
+    margin: 0 auto; }
+
+footer {
+  background-color: #37BEC0;
+  text-align: right; }
 
 /*# sourceMappingURL=main.css.map */
