@@ -42,6 +42,7 @@
   "dependencies": {
     "hapi": "^8.6.1",
     "hapi-auth-cookie": "^3.0.1",
-    "jsdoc": "^3.3.2"
+    "jsdoc": "^3.3.2",
+    "rethinkdb": "^2.0.2"
   }
 }
