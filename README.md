@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/foundersandcoders/facform/badges/gpa.svg)](https://codeclimate.com/github/foundersandcoders/facform)
 [![Test Coverage](https://codeclimate.com/github/foundersandcoders/facform/badges/coverage.svg)](https://codeclimate.com/github/foundersandcoders/facform/coverage)
 [![Build Status](https://travis-ci.org/foundersandcoders/facform.svg)](https://travis-ci.org/foundersandcoders/facform)
-[![Dependencies](https://david-dm.org/foundersandcoders/facform.svg)
+![Dependencies](https://david-dm.org/foundersandcoders/facform.svg)
 [![devDependency Status](https://david-dm.org/foundersandcoders/facform/dev-status.svg)](https://david-dm.org/foundersandcoders/facform#info=devDependencies)
 
 Week 8 project for FAC5 to create a learning platform for Founders & Coders.
