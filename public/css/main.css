@@ -1,27 +1,55 @@
-body {
-  background-color: #eee; }
+* {
+  border: 1px solid black;
+  padding: 10px; }
 
-#container {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto; }
+body {
+  font-family: verdana, sans-serif;
+  background-color: #eee;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  height: 100%;
+  width: 100%; }
 
 #one {
   background-color: #3E4E5A;
-  height: 600px; }
-  #one #mission {
+  height: 90vh; }
+  #one h1#mission {
     color: white;
+    font-size: 4.5em;
     text-align: center;
     text-transform: uppercase; }
-  #one #start {
+  #one #start-button {
+    color: white;
+    display: block;
     background-color: #37BEC0;
     border: none;
-    font-size: 16px;
+    font-size: 26px;
+    height: 12%;
     width: 20%;
     margin: 0 auto; }
 
+#two {
+  background-color: #F9F7F6;
+  height: 100vh;
+  font-weight: normal;
+  text-align: center; }
+  #two #info-container {
+    margin: 0 auto;
+    padding: 0;
+    width: 95%;
+    text-align: center; }
+  #two #info1, #two #info2, #two #info3 {
+    display: inline-block;
+    width: 30%;
+    height: 300px;
+    font-size: 28px;
+    text-align: center; }
+
 footer {
   background-color: #37BEC0;
-  text-align: right; }
+  text-align: right;
+  height: 40vh; }
 
 /*# sourceMappingURL=main.css.map */
