@@ -2,9 +2,13 @@ var Hapi = require('hapi');
 var server = new Hapi.Server();
 var routes = require ('./routes/routes.js'); // Check with Abdi and Anita
 
+
 server.connection({
   port: process.env.PORT || 8000
 });
+
+var socket=require('socket.io')(server.listener);
+module.exports.socket=socket;
 
 server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {
