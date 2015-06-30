@@ -32,7 +32,7 @@ module.exports = [
   {
     method: "GET",
     path: '/createUser',
-    handler: function(request, response) {
+    handler: function(request, reply) {
       reply(createUser({name: "Simon"}));
     }
 
@@ -40,7 +40,7 @@ module.exports = [
   {
     method: "GET",
     path: '/readUser',
-    handler: function(request, response) {
+    handler: function(request, reply) {
       reply(readAllUsers());
     }
 
