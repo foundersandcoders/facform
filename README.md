@@ -1,5 +1,5 @@
 # facform (Real name TBC)
--[![Build Status](https://travis-ci.org/foundersandcoders/facform.svg)](https://travis-ci.org/foundersandcoders/facform)
+[![Build Status](https://travis-ci.org/foundersandcoders/facform.svg)](https://travis-ci.org/foundersandcoders/facform)
 Week 8 project for FAC5 to create a learning platform for Founders & Coders.
 
 ## Production
@@ -13,7 +13,9 @@ Technically: everyone. However the person responsible for any issues with the Re
 #### Resources
 
 Pivotal Tracker: Project tracking located [here](https://www.pivotaltracker.com/n/projects/1376992)
+
 Project Wireframes: Located at [Google Slides](https://docs.google.com/presentation/d/1cWb6hFbg6THoIsz7FQiDJXwGlKGLkmeXTYfaZad_bc4/edit?pli=1#slide=id.ga28673939_0_1)
+
 More to come... 
 
 #### Production Standards  
@@ -40,6 +42,7 @@ More to come...
 + For the sake of consistency, please use double-space linting on code. You can also use [JS Fiddle](http://jsfiddle.net/) if you are feeling lazy.
 + Check your code with [JS Lint](http://jslint.com/)
 + Please use [JSDoc](https://github.com/docdis/learn-jsdoc) to comment your code.
+
 #### Production Log
 + Monday 29/6: Voted on project. Pivotal tracker set up. Wireframes created. Repo set up.
 
