@@ -35,7 +35,8 @@
   "devDependencies": {
     "istanbul": "^0.3.17",
     "jshint": "^2.8.0",
-    "pre-commit": "^1.0.10"
+    "pre-commit": "^1.0.10",
+    "shot": "^1.5.3"
   },
   "dependencies": {
     "jsdoc": "^3.3.2"
