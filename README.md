@@ -1,5 +1,10 @@
 # facform (Real name TBC)
+[![Code Climate](https://codeclimate.com/github/foundersandcoders/facform/badges/gpa.svg)](https://codeclimate.com/github/foundersandcoders/facform)
+[![Test Coverage](https://codeclimate.com/github/foundersandcoders/facform/badges/coverage.svg)](https://codeclimate.com/github/foundersandcoders/facform/coverage)
 [![Build Status](https://travis-ci.org/foundersandcoders/facform.svg)](https://travis-ci.org/foundersandcoders/facform)
+[![Dependencies](https://david-dm.org/foundersandcoders/facform.svg)
+[![devDependency Status](https://david-dm.org/foundersandcoders/facform/dev-status.svg)](https://david-dm.org/foundersandcoders/facform#info=devDependencies)
+
 Week 8 project for FAC5 to create a learning platform for Founders & Coders.
 
 ## Production
@@ -19,7 +24,6 @@ Project Wireframes: Located at [Google Slides](https://docs.google.com/presentat
 More to come... 
 
 #### Production Standards  
-(These need votes 10am Tues)
 
 **Branches, Commits and Pull Requests**
 
