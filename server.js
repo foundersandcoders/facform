@@ -3,6 +3,8 @@ var server = new Hapi.Server();
 var routes = require ('./routes.js'); // Check with Abdi and Anita
 var handlebars = require('handlebars');
 
+module.exports = server;
+
 server.connection({
   port: process.env.PORT || 8000
 });
