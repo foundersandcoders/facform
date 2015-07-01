@@ -29,10 +29,3 @@ it("Test to see authentication redirects to github", function(done){
 		done();
 	});
 });
-
-it("checks if port environment variables work", function(done){
-	server.inject({method: 'GET', url: '/login'}, function(res){
-		console.log(res);
-		done();
-	});
-});
