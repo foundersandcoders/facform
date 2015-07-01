@@ -6,7 +6,7 @@ var handlebars = require('handlebars');
 module.exports = server;
 
 server.connection({
-  port: process.env.PORT || 8000
+  port: process.env.PORT,
 });
 
 server.views({
