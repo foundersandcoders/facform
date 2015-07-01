@@ -1,19 +1,12 @@
-var db = require('./rethinkdb.js')({host: '127.0.0.1', db: 'Facform'});
+var db = require('./rethinkdb.js')();
 
 module.exports = [
+
   {
     method: "GET",
     path: '/createUser',
     handler: function(request, reply) {
-      reply.file(__dirname + "/public/templates/createUser.html");
-    }
-
-  },
-  {
-    method: "POST",
-    path: '/createUser',
-    handler: function(request, reply) {
-      var result = db.createUser({name: request.payload.username}, reply);
+      var result = db.create("users", {id: "1", name: "TEST"}, reply);
     }
   },
 
@@ -21,7 +14,7 @@ module.exports = [
     method: "GET",
     path: '/readUser',
     handler: function(request, reply) {
-      db.readAllUsers(reply);
+      db.readAll("users", reply);
     }
 
   },
@@ -32,6 +25,15 @@ module.exports = [
     handler: function(request, reply) {
       reply("Welcome to the app");
     }
+  },
+
+  {
+    method: "GET",
+    path: '/readUser/{id}',
+    handler: function(request, reply) {
+      db.read("users", request.params.id, reply);
+    }
   }
+
 
 ];

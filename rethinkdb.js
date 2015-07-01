@@ -22,22 +22,35 @@ module.exports = function(config){
   });
 
   /**
-   * createUser User
+   * create
    *
    * Adds a user to the database
-   * @param {object} User object from github (GET /users/:username)
-   * @returns {object} User object that has been inserted in our database
+   * @param {string} table - name of the DB table (Users/chats etc)
+   * @param data - the element to be inserted into the database
+   * @param {function} cb - a callback function
+   * @returns {object} - the confirmation from the database
    */
-  function createUser(user, cb) {
-    r.table('users').insert(user).run(connection, function(err, result) {
+  function create(table, data, cb){
+    r.table(table).insert(data).run(connection, function(err, result) {
       if (err) {throw err;}
-      console.log(result);
+      return cb(result);
+    });
+  }
+  // 
+  // function update(table, id, data, cb){
+  //   r.table(table).get(id).update(data)
+  //   return cb(result);
+  // }
+
+  function read(table, id, cb){
+    r.table(table).get(id).run(connection, function(err, result){
+      if (err) {throw err;}
       return cb(result);
     });
   }
 
-  function readAllUsers(cb) {
-    r.table('users').run(connection, function(err, cursor) {
+  function readAll(table, cb){
+    r.table(table).run(connection, function(err, cursor) {
         if (err) {throw err;}
         cursor.toArray(function(err, result) {
             if (err) {throw err;}
@@ -45,8 +58,10 @@ module.exports = function(config){
         });
     });
   }
+
   return {
-    createUser: createUser,
-    readAllUsers: readAllUsers
+    create: create,
+    readAll: readAll,
+    read: read
   };
 };

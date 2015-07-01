@@ -1,18 +1,12 @@
 var Hapi = require('hapi');
 var server = new Hapi.Server();
 var routes = require ('./routes.js');
-require('dotenv').load();
+var dotenv = require('dotenv').load();
 
 server.connection({
   port: process.env.PORT || 8000
 });
 
-// server.views({
-// 	engines: {
-// 		html: require('handlebars')
-// 	},
-// 	path: __dirname + '/public/templates'
-// });
 
 server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {
