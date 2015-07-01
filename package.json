@@ -42,6 +42,7 @@
   "dependencies": {
     "boom": "^2.8.0",
     "cryptiles": "^2.0.4",
+    "dotenv": "^1.2.0",
     "hapi": "^8.6.1",
     "hapi-auth-cookie": "^3.0.1",
     "hoek": "^2.14.0",
