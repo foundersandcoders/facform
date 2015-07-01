@@ -43,11 +43,12 @@ More to come...
 
 + You are responsible for writing tests for your own code. If you want to contribute to the master branch, please ensure that you have relevant tests in place.
 
-**Linting**
+**Code Style**
 
 + For the sake of consistency, please use double-space linting on code. You can also use [JS Fiddle](http://jsfiddle.net/) if you are feeling lazy.
 + Check your code with [JS Lint](http://jslint.com/)
 + Please use [JSDoc](https://github.com/docdis/learn-jsdoc) to comment your code.
++ Please order CSS alphabetically.
 
 #### Production Log
 + Monday 29/6: Voted on project. Pivotal tracker set up. Wireframes created. Repo set up.
