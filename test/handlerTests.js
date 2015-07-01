@@ -11,53 +11,62 @@ var before = lab.before;
 var after = lab.after;
 var expect = Code.expect;
 
-function loginDispatch(request, reply){
-  request.auth = {};
-  request.auth.session = {};
-  request.auth.session.set = function(credentials){
-    expect(credentials).to.exist();
-  };
-  request.auth.credentials = "a string";
+function decorate (reqDecorations, repDecorations, callback){
+  return function(request, reply){
+    for (var reqDec in reqDecorations){
+      request[reqDec] = reqDecorations[reqDec];
+    }
 
-  reply.redirect = function(location){
-    expect(location).to.equal('/home');
-  };
+    for (var repDec in repDecorations){
+      reply[repDec] = repDecorations[repDec];
+    }
 
-  handlers.login(request, reply);
+    callback(request, reply);
+  };
 }
 
-function landingDispatch(request, reply){
-  request.auth = {};
-  request.auth.isAuthenticated = true;
+var loginDispatch = decorate(
+  {
+    auth: {
+      session: {set: function(credentials){expect(credentials).to.exist();}},
+      credentials: "a string",
+    },
+  },
+  {
+    redirect: function(location){expect(location).to.equal('/home');},
+  },
+  handlers.login
+);
 
-  reply.redirect = function(location){
-    expect(location).to.equal('/home');
-  };
+var landingDispatch = decorate(
+  {
+    auth: {isAuthenticated: true},
+  },
+  {
+    redirect: function(location){expect(location).to.equal('/home');}
+  },
+  handlers.displayLanding
+);
 
-  handlers.displayLanding(request, reply);
-}
+var homeDispatchNotAuthenticated = decorate(
+  {
+    auth: {isAuthenticated: false}
+  },
+  {
+    view: function(location){expect(location).to.equal('index');}
+  },
+  handlers.home
+);
 
-function homeDispatchNotAuthenticated(request, reply) {
-  request.auth = {};
-  request.auth.isAuthenticated = false;
-
-  reply.view = function(location) {
-    expect(location).to.equal('index');
-  };
-
-  handlers.home(request, reply);
-}
-
-function homeDispatch(request, reply) {
-  request.auth = {};
-  request.auth.isAuthenticated = true;
-
-  reply.view = function(location) {
-    expect(location).to.equal('home');
-  };
-
-  handlers.home(request, reply);
-}
+var homeDispatch = decorate(
+  {
+    auth: {isAuthenticated: true},
+  },
+  {
+    view: function(location){expect(location).to.equal('home');}
+  },
+  handlers.home
+);
 
 Shot.inject(loginDispatch, {method: 'get', url: '/login'});
 

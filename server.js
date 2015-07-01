@@ -1,12 +1,12 @@
 var Hapi = require('hapi');
 var server = new Hapi.Server();
-var routes = require ('./routes.js'); // Check with Abdi and Anita
+var routes = require ('./routes.js'); // Check with Abdi and Anit
 var handlebars = require('handlebars');
 
 module.exports = server;
 
 server.connection({
-  port: process.env.PORT || 8000
+  port: process.env.PORT,
 });
 
 server.views({
@@ -24,7 +24,7 @@ server.register(require('hapi-auth-cookie'), function (err) {
   });
 });
 
-server.register(require('./node_modules/bell'), function(err){
+server.register(require('fixed-bell'), function(err){
   server.auth.strategy('github', 'bell', {
     provider: 'github',
     password: 'password',

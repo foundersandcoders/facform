@@ -6,11 +6,10 @@ var handlers = {
     if (!request.auth.isAuthenticated) {
       return reply.view('index');
     }
-    return reply.redirect('/home');
+      return reply.redirect('/home');
   },
   login: function(request, reply) {
     request.auth.session.set(request.auth.credentials);
-    console.log('login');
     return reply.redirect('/home');
   },
   home: function(request, reply) {
