@@ -1,6 +1,6 @@
 var Hapi = require('hapi');
 var server = new Hapi.Server();
-var routes = require ('./routes/routes.js'); // Check with Abdi and Anita
+var routes = require ('./routes.js'); // Check with Abdi and Anita
 
 server.connection({
   port: process.env.PORT || 8000
