@@ -29,3 +29,10 @@ it("Test to see authentication redirects to github", function(done){
 		done();
 	});
 });
+
+// it("Test to check that user is redirected to index.html with statusCode 302", function(done){
+// 	server.inject({method: 'GET', url: '/logout'}, function (res) {
+// 		assert.equal(res.statusCode, '302' );
+// 		done();
+// 	});
+// });
