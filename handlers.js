@@ -1,4 +1,3 @@
-var server = require('./server.js');
 var handlebars = require('handlebars');
 var fs = require('fs');
 

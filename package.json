@@ -7,14 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/*.js",
+    "test": "lab -t 100",
     "start": "nodemon server.js",
-    "coverage": "./node_modules/.bin/istanbul cover ./test/*.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "jshint -c .jshintrc --exclude-path .jshintignore ."
   },
   "pre-commit": [
     "jshint",
-    "coverage"
+    "test"
   ],
   "repository": {
     "type": "git",
@@ -33,11 +32,12 @@
   },
   "homepage": "https://github.com/foundersandcoders/facform",
   "devDependencies": {
+    "code": "^1.4.1",
     "foreman": "^1.4.1",
     "istanbul": "^0.3.17",
     "jshint": "^2.8.0",
-    "pre-commit": "^1.0.10",
-    "shot": "^1.5.3"
+    "lab": "^5.11.1",
+    "pre-commit": "^1.0.10"
   },
   "dependencies": {
     "boom": "^2.8.0",
