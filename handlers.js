@@ -10,7 +10,6 @@ var handlers = {
 	},
 	login: function(request, reply) {
 		request.auth.session.set(request.auth.credentials);
-		console.log(request.auth.session.set(request.auth.credentials));
 		return reply.redirect('/home');
 	},
 	home: function(request, reply) {

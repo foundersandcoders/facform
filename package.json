@@ -37,7 +37,8 @@
     "istanbul": "^0.3.17",
     "jshint": "^2.8.0",
     "lab": "^5.11.1",
-    "pre-commit": "^1.0.10"
+    "pre-commit": "^1.0.10",
+    "shot": "^1.5.3"
   },
   "dependencies": {
     "boom": "^2.8.0",
