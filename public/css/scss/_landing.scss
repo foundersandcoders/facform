@@ -53,6 +53,9 @@ body {
     transition-duration: 0.5s;
     text-transform: uppercase;
     letter-spacing: 3px;
+    // border-right: 2px solid rgba(61,66,74,0.4);
+    // border-bottom: 2px solid rgba(61,66,74,0.4);
+    box-shadow: 3px 3px 1px #398c91;
   }
 
   #start-button:hover {
