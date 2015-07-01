@@ -1,13 +1,23 @@
-var socket=require('/server.js').socket;
+var Chat=require('./chathandlers.js');
 
-function chat(request){
+exports.register = function (server, options, next) {
 
-  socket.on('connection', function(sock){
-    console.log("user connected");
-    var username='username';
-    socket.emit('userconnected',username); //will change to request.username
-  });
+    var io = require('socket.io')(server.listener);
 
-}
+    io.on('connection', function (socket) {
+        console.log('New connection!');
+        // socket.on('hello', Chat.connected);
+        io.emit('postedMessage',"user has joined the chat ");
+        socket.on('postMessage',function(message){
+          console.log(message);
+          //push message to individual chatroom db
+          io.emit('postedMessage',message);
+        });
+    });
 
-module.exports=chat;
+    next();
+};
+
+exports.register.attributes = {
+    name: 'hapi-chat'
+};
