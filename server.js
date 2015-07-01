@@ -24,7 +24,7 @@ server.register(require('hapi-auth-cookie'), function (err) {
   });
 });
 
-server.register(require('./bell'), function(err){
+server.register(require('./node_modules/bell'), function(err){
   server.auth.strategy('github', 'bell', {
     provider: 'github',
     password: 'password',
