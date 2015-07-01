@@ -37,6 +37,32 @@ function landingDispatch(request, reply){
   handlers.displayLanding(request, reply);
 }
 
+function homeDispatchNotAuthenticated(request, reply) {
+  request.auth = {};
+  request.auth.isAuthenticated = false;
+
+  reply.view = function(location) {
+    expect(location).to.equal('index');
+  };
+
+  handlers.home(request, reply);
+}
+
+function homeDispatch(request, reply) {
+  request.auth = {};
+  request.auth.isAuthenticated = true;
+
+  reply.view = function(location) {
+    expect(location).to.equal('home');
+  };
+
+  handlers.home(request, reply);
+}
+
 Shot.inject(loginDispatch, {method: 'get', url: '/login'});
 
 Shot.inject(landingDispatch, {method: 'get', url: '/'});
+
+Shot.inject(homeDispatchNotAuthenticated, {method: 'get', url: '/home'});
+
+Shot.inject(homeDispatch, {method: 'get', url: '/home'});
