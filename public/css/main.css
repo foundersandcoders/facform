@@ -108,12 +108,34 @@ footer {
 
 #login-box {
   width: 500px;
-  height: 300px;
+  height: 250px;
   background-color: white;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -150px 0 0 -250px; }
+  margin: -150px 0 0 -250px;
+  text-align: center;
+  padding-top: 60px; }
+  #login-box img {
+    display: inline; }
+  #login-box button {
+    color: white;
+    display: inline;
+    background-color: #3E4E5A;
+    border: none;
+    font-size: 18px;
+    height: 70px;
+    width: 200px;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 3px 3px 1px black; }
+  #login-box button:hover {
+    background-color: #DEDEDE;
+    color: #0F2920; }
+  #login-box button:focus {
+    outline: 0; }
 
 /*# sourceMappingURL=main.css.map */
