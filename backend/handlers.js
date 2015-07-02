@@ -3,46 +3,42 @@ var fs = require('fs');
 
 var handlers = {
   displayLanding: function(request, reply) {
-    if (request.auth.isAuthenticated) {
-      reply.view('home', { name: request.auth.credentials.profile.displayName });
-    } else {
-      reply.view('home', { name: 'stranger!' });
+    if (!request.auth.isAuthenticated) {
+      return reply.view('index');
     }
+      return reply.redirect('/dashboard');
   },
-
-  home: function(request, reply) {
-    if (request.auth.isAuthenticated) {
-      reply.view('home', { name: request.auth.credentials.profile.displayName });
-    } else {
-      reply.view('home', { name: 'stranger!' });
-    }
-  },
-
   login: function(request, reply) {
-    if(request.auth.isAuthenticated) {
-      request.auth.session.set(request.auth.credentials.profile);
-      // console.log(request.auth.credentials);
-      reply.redirect('/');
-      // request.auth.session.set(request.auth.credentials.profile);
-      // reply.view('home', { name: request.auth.credentials.raw.name });
-    } else {
-      reply.view('home', { name: 'stranger!' });
-    }
+    request.auth.session.set(request.auth.credentials);
+      reply.redirect('/dashboard');
   },
-
+  dashboard: function(request, reply) {
+    if (!request.auth.isAuthenticated) {
+    console.log(request.auth);  
+      return reply.view('index');
+    }
+    var context = {
+      name: request.auth.credentials.profile.displayName
+    };
+    return reply.view('dashboard', context);
+  },
   profile: function(request, reply) {
     if(request.auth.isAuthenticated) {
       reply.view('profile', { name: request.auth.credentials.profile.displayName });
     } else {
-      reply.view('home', { name: 'stranger!' });
+      reply.view('dashboard', { name: 'stranger!' });
     }
   },
-
-  logoutUser: function(request,reply) {
+  joinChallenge: function(request, reply) {   
+    return reply.view('challenge');
+  },
+  logout: function(request, reply) {
     request.auth.session.clear();
-    reply.redirect('/');
+    return reply.redirect('/');
   }
-
 };
 
 module.exports = handlers;
+
+
+

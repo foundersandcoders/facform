@@ -19,15 +19,6 @@ server.views({
   path: path.join(__dirname, "/public/templates")
 });
 
-var authOptions = {
-  provider: 'github',
-  password: 'github-password', //Password used for encryption
-  clientId: process.env.APPID,//'YourAppId',
-  clientSecret: process.env.APPSECRET,//'YourAppSecret',
-  isSecure: false, //means authentication can occur over http
-  scope: ['user']
-};
-
 server.register(hapiAuthCookie, function (err) {
   server.auth.strategy('session', 'cookie', {
     password: 'password',
