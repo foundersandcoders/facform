@@ -33,6 +33,7 @@
   "homepage": "https://github.com/foundersandcoders/facform",
   "devDependencies": {
     "code": "^1.4.1",
+    "codeclimate-test-reporter": "^0.1.0",
     "foreman": "^1.4.1",
     "istanbul": "^0.3.17",
     "jshint": "^2.8.0",
