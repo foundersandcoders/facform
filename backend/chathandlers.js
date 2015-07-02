@@ -21,7 +21,7 @@ chat.connected = function (request,reply){
   console.log("hey jack");
   var roomNumber=request.params.roomNumber;
   console.log("roomNumber",roomNumber);
-  reply.file('./chatbox.html');//when put chatbox in templates use views...
+  reply.view('chatbox');//when put chatbox in templates use views...
 };
 
 
@@ -46,7 +46,7 @@ chat.newRoom = function (request,reply){
 };
 
 chat.createRoom = function (request,reply) {
-  reply.file('./createChatRoom.html');
+  reply.view('createChatRoom');
 };
 
 

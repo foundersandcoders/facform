@@ -1,5 +1,5 @@
 var handlers = require('./handlers.js');
-var chat = require('../chathandlers.js');
+var chat = require('./chathandlers.js');
 
 var routes = [
 {

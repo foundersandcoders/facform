@@ -39,7 +39,7 @@ server.register(bell, function (err) {
 
 server.route(routes);
 
-server.register(require('./chat.js'), function (err) {
+server.register(require('./backend/chat.js'), function (err) {
 
     if (err) {
         throw err;
