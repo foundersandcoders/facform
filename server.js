@@ -2,6 +2,7 @@ var Hapi = require('hapi');
 var server = new Hapi.Server();
 var routes = require ('./routes.js'); // Check with Abdi and Anit
 var handlebars = require('handlebars');
+var cwRoutes = require('./codewars/cwRoutes.js');
 
 module.exports = server;
 
@@ -36,5 +37,6 @@ server.register(require('fixed-bell'), function(err){
 });
 
 server.route(routes);
+server.route(cwRoutes);
 
 server.start();
