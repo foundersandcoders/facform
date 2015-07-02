@@ -3,12 +3,11 @@ var server = new Hapi.Server();
 var routes = require ('./routes.js'); // Check with Abdi and Anita
 var handlebars = require('handlebars');
 
-
+module.exports = server;
 
 server.connection({
-  port: process.env.PORT || 8000
+  port: process.env.PORT,
 });
-
 
 server.views({
   engines: {
@@ -16,7 +15,6 @@ server.views({
   },
   path: __dirname + '/public/templates'
 });
-
 
 server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {
@@ -26,7 +24,7 @@ server.register(require('hapi-auth-cookie'), function (err) {
   });
 });
 
-server.register(require('./bell'), function(err){
+server.register(require('fixed-bell'), function(err){
   server.auth.strategy('github', 'bell', {
     provider: 'github',
     password: 'password',
@@ -44,6 +42,5 @@ server.register(require('./chat.js'), function (err) {
     if (err) {
         throw err;
     }
-
     server.start();
 });

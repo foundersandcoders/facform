@@ -1,21 +1,34 @@
 var socket=io();
+var url=window.location.href.split('/');
+
+
+
 
 socket.on('userConnected',function(username){
   console.log(username);
-  document.getElementById('pastchat').append('<li>'+username+' joined the chat!!!!!</li>');
+  document.getElementById('pastchat').innerHTML+=('<p>'+username+' joined the chat!!!!!</p>');
 });
 
-socket.on('postedMessage',function(message){
-  console.log("hey",message);
-  document.getElementById('pastchat').innerHTML+=('<p>'+message+'</p>');
+socket.on('postedMessage',function(messageObj){
+  console.log("hey",messageObj);
+  // if (messageObj.chatID === url[url.length-1]){
+    document.getElementById('pastchat').innerHTML+=('<p>'+messageObj.message+'</p>');
+  // }
 });
 
 
 var postMessage = function() {
   var chatPost = document.getElementById('message').value;
   console.log(chatPost);
-  socket.emit('postMessage',chatPost);
+  var chatObject={
+    chatID:url[url.length-1],
+    message:chatPost
+  };
+  socket.emit('postMessage',chatObject);
 };
+
+
+
 
 // // A function that assigns a token to anyone who joins a conversation
 // var setRoom = function () {

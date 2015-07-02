@@ -1,5 +1,4 @@
 var Chat=require('./chathandlers.js');
-
 exports.register = function (server, options, next) {
 
     var io = require('socket.io')(server.listener);
@@ -7,7 +6,7 @@ exports.register = function (server, options, next) {
     io.on('connection', function (socket) {
         console.log('New connection!');
         // socket.on('hello', Chat.connected);
-        io.emit('postedMessage',"user has joined the chat ");
+        io.emit('userConnected',"user");
         socket.on('postMessage',function(message){
           console.log(message);
           //push message to individual chatroom db

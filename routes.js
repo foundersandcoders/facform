@@ -1,6 +1,7 @@
 var handlers = require('./handlers.js');
 var chat = require('./chathandlers.js');
 
+
 var routes = [
 {
 	method: 'GET',
@@ -31,6 +32,39 @@ var routes = [
 },
 {
 	method: 'GET',
+	path: '/chatroom/{roomNumber}',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.checkExist
+	}
+},
+{
+	method: 'GET',
+	path: '/newroom/{roomNumber}',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.newRoom
+	}
+},
+{
+	method: 'GET',
+	path: '/chatbox/{roomNumber}',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.connected
+	}
+},
+{
+	method: 'GET',
 	path: '/home',
 	config: {
 		auth: {
@@ -38,6 +72,18 @@ var routes = [
 			strategy: 'session'
 		},
 		handler: handlers.home
+	}
+
+},
+{
+	method: 'GET',
+	path: '/createroom',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.createRoom
 	}
 
 },
