@@ -7,7 +7,7 @@ module.exports = [
     method: "GET",
     path: '/createUser',
     handler: function(request, reply) {
-      var result = db.create("users", {id: "1", name: "TEST"}, reply);
+      var result = db.create("users", {id: "11", name: "TEST", team: ['nikki', 'simon', 'rub1e']}, reply);
     }
   },
 
@@ -30,9 +30,16 @@ module.exports = [
 
   {
     method: "GET",
-    path: '/readUser/{id}',
+    path: '/readUserOpts',
     handler: function(request, reply) {
-      db.read("users", request.params.id, reply);
+      db.read("users", {name: "TEST"}, reply, {team: "simon"});
+    }
+  },
+  {
+    method: "GET",
+    path: '/update',
+    handler: function(request, reply) {
+      db.update("users", "10", {name: "simon"}, reply);
     }
   }
 

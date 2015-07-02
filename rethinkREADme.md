@@ -72,7 +72,9 @@ To connect to the rethinkDB database on compose.io from local host, create anoth
 
 2. In the compose.io dashboard, click add User and add the public key from `id_rsa.pub`. This enables you to access the compose.io rethinkDB database and admin UI while testing your application locally.
 
-3. To connect to the database locally run this command in a terminal window:
+3. To connect locally, you don't need to tunnel using "tunnel.py" so remove this line from your Procfile if you are using `foreman` to run your application. If you're just using `nodemon` there's not need to modify your procfile.
+
+4. To connect to the database locally run this command in a terminal window:
 
   ```
   ssh -N compose@aws-us-east-1-portal.5.dblayer.com -p 10485 \
@@ -83,7 +85,7 @@ To connect to the rethinkDB database on compose.io from local host, create anoth
 
   Run the application as normal (e.g. `node server.js`) and point your browser to `localhost:{yourport}`
 
-4.  To connect to the database adminUI run this command in the terminal window:
+5.  To connect to the database adminUI run this command in the terminal window:
 
   ```
   ssh -N compose@aws-us-east-1-portal.5.dblayer.com -p 10485 \
