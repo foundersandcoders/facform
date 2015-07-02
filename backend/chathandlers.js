@@ -24,13 +24,6 @@ chat.connected = function (request,reply){
   reply.view('chatbox');//when put chatbox in templates use views...
 };
 
-
-chat.message = function (request,reply){
-
-  console.log("hey",request.payload);
-
-};
-
 chat.checkExist = function(request,reply){
   DBfind(request.params.roomNumber,function(data){
     if (data.length>0){reply("true");}

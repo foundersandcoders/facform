@@ -30,3 +30,21 @@ lab.test("chat.connected test", function(done) {
     done();
   });
 });
+
+lab.test("chat.connected test", function(done) {
+  var options = {
+    method: "GET",
+    url: "/createroom",
+    auth: {
+      isAuthenticated: true,
+      credentials: {
+        username: "testuser"
+      }
+    }
+  };
+  server.inject(options, function(response) {
+    Code.expect(response.statusCode).to.equal(200);
+    Code.expect(response.result).to.equal(fs.readFileSync('public/templates/createChatRoom.html').toString());
+    done();
+  });
+});
