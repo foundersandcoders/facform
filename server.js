@@ -1,7 +1,7 @@
 var hapi = require('hapi'),
     server = new hapi.Server(),
     path = require('path'),
-    routes = require('./routes.js'), // Check with Abdi and Anit
+    routes = require('./backend/routes.js'), // Check with Abdi and Anit
     handlebars = require('handlebars'),
     hapiAuthCookie = require('hapi-auth-cookie'),
     bell = require('fixed-bell');

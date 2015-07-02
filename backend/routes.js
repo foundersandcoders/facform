@@ -64,7 +64,7 @@ var routes = [
 		path: '/public/{path*}',
 		handler: {
 			directory: {
-				path: './public'
+				path: '../public'
 			}
 		}
 	}
