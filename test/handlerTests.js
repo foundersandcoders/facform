@@ -1,7 +1,7 @@
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
-var handlers = require('../handlers.js');
+var handlers = require('./backend/handlers.js');
 var Shot = require('shot');
 
 // some niceties

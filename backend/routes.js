@@ -13,7 +13,10 @@ var routes = [
   method: 'GET',
   path: '/login',
   config: {
-    auth: "github",
+    auth: {
+      mode: 'try',
+      strategy: 'github'
+    },
     handler: handlers.login
   }
 },

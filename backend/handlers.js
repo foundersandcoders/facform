@@ -9,8 +9,12 @@ var handlers = {
       return reply.redirect('/dashboard');
   },
   login: function(request, reply) {
-    request.auth.session.set(request.auth.credentials);
-      reply.redirect('/dashboard');
+    if(request.auth.isAuthenticated) {
+      request.auth.session.set(request.auth.credentials);
+      reply.view('dashboard', {name: request.auth.credentials.profile.displayName});
+    } else {
+      reply.view('index');
+    }
   },
   dashboard: function(request, reply) {
     if (!request.auth.isAuthenticated) {
@@ -26,7 +30,7 @@ var handlers = {
     if(request.auth.isAuthenticated) {
       reply.view('profile', { name: request.auth.credentials.profile.displayName });
     } else {
-      reply.view('dashboard', { name: 'stranger!' });
+      reply.view('index', { name: 'stranger!' });
     }
   },
   joinChallenge: function(request, reply) {   
