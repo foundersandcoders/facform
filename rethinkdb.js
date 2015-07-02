@@ -24,7 +24,7 @@ module.exports = function(config){
   /**
    * create
    *
-   * Adds a user to the database
+   * Adds to the database
    * @param {string} table - name of the DB table (Users/chats etc)
    * @param data - the element to be inserted into the database
    * @param {function} cb - a callback function
@@ -36,7 +36,7 @@ module.exports = function(config){
       return cb(result);
     });
   }
-  // 
+  //
   // function update(table, id, data, cb){
   //   r.table(table).get(id).update(data)
   //   return cb(result);
