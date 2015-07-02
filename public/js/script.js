@@ -1,9 +1,6 @@
 var socket=io();
 var url=window.location.href.split('/');
 
-
-
-
 socket.on('userConnected',function(username){
   console.log(username);
   document.getElementById('pastchat').innerHTML+=('<p>'+username+' joined the chat!!!!!</p>');
@@ -12,10 +9,9 @@ socket.on('userConnected',function(username){
 socket.on('postedMessage',function(messageObj){
   console.log("hey",messageObj);
   // if (messageObj.chatID === url[url.length-1]){
-    document.getElementById('pastchat').innerHTML+=('<p>'+messageObj.message+'</p>');
+    document.getElementById('pastchat').innerHTML+=('<p>'+messageObj.user + ': ' + messageObj.message+'</p>');
   // }
 });
-
 
 var postMessage = function() {
   var chatPost = document.getElementById('message').value;
