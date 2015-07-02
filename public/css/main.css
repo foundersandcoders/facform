@@ -1,78 +1,3 @@
-.container {
-  height: 100%;
-  width: 100%; }
-
-#one {
-  background: url("../images/coffeecoding.jpg");
-  background-size: 100%;
-  height: 700px;
-  background-attachment: fixed; }
-  #one #container-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-  #one h1#mission {
-    color: white;
-    font-size: 5em;
-    text-align: center;
-    text-transform: uppercase; }
-  #one #start-button {
-    color: white;
-    display: block;
-    background-color: #37BEC0;
-    border: none;
-    font-size: 26px;
-    height: 70px;
-    width: 300px;
-    margin: 0 auto;
-    transition-property: background-color, font-weight, letter-spacing;
-    transition-duration: 0.5s;
-    text-transform: uppercase;
-    letter-spacing: 3px; }
-  #one #start-button:hover {
-    background-color: #72D0D2;
-    letter-spacing: 6px; }
-  #one #start-button:active {
-    background-color: aqua; }
-  #one #start-button:focus {
-    outline: 0; }
-
-#two {
-  background-color: #F5F5F5;
-  height: 700px;
-  text-align: center; }
-  #two h2 {
-    padding: 80px;
-    font-weight: normal;
-    font-size: 30px; }
-  #two #info-container {
-    margin: 0 auto;
-    padding: 0;
-    width: 99%;
-    text-align: center;
-    height: 75%; }
-  #two .three-boxes {
-    font-size: 20px;
-    padding: 50px;
-    line-height: 180%;
-    height: 270px; }
-  #two #info1, #two #info2, #two #info3 {
-    display: inline-block;
-    width: 30%;
-    height: 100%;
-    font-size: 28px;
-    text-align: center; }
-
-#info1 {
-  margin-right: 30px; }
-
-#info3 {
-  margin-left: 30px; }
-
-footer {
-  background-color: #F5F5F5;
-  height: 40vh; }
-
 .content {
   background-color: #FFFFFF;
   text-align: center; }
@@ -104,6 +29,114 @@ footer {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   background-color: #F5F5F5;
   margin: 50px; }
+
+.container {
+  height: 100%;
+  width: 100%; }
+
+#one {
+  background: url("../images/coffeecoding.jpg");
+  background-size: 100%;
+  height: 700px;
+  background-attachment: fixed; }
+  #one #container-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  #one h1#mission {
+    color: white;
+    font-size: 4.5em;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.3em; }
+  #one #start-button {
+    color: white;
+    display: block;
+    background-color: #37BEC0;
+    border: none;
+    font-size: 18px;
+    height: 50px;
+    width: 230px;
+    margin: 100px auto 0 auto;
+    transition-property: background-color, font-weight, letter-spacing;
+    transition-duration: 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 3px 3px 1px #398c91; }
+  #one #start-button:hover {
+    background-color: #72D0D2;
+    letter-spacing: 6px; }
+  #one #start-button:active {
+    background-color: aqua; }
+  #one #start-button:focus {
+    outline: 0; }
+
+#two {
+  background-color: #F5F5F5;
+  height: 700px;
+  text-align: center; }
+  #two h2 {
+    padding: 80px;
+    font-weight: normal;
+    font-size: 30px; }
+  #two #info-container {
+    margin: 0 auto;
+    padding: 0;
+    width: 99%;
+    text-align: center;
+    height: 75%; }
+  #two .three-boxes {
+    font-size: 16px;
+    padding: 50px;
+    line-height: 180%;
+    height: 270px; }
+  #two #info1, #two #info2, #two #info3 {
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    font-size: 28px;
+    text-align: center; }
+
+#info1 {
+  margin-right: 30px; }
+
+#info3 {
+  margin-left: 30px; }
+
+footer {
+  background-color: #F5F5F5;
+  height: 40vh; }
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); }
+
+#x {
+  position: fixed;
+  right: 0;
+  -webkit-filter: brightness(265%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease; }
+
+#x:hover {
+  -webkit-filter: brightness(100%); }
+
+#login-box {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -250px; }
 
 html {
   margin: 0;

@@ -1,11 +1,12 @@
 @import 'variables';
 @import 'mixins';
-@import 'landing';
-@import 'footer';
 @import 'dashboard';
 @import 'navbar';
 @import 'profile';
 @import 'new';
+@import 'index';
+@import 'footer';
+@import 'lightbox';
 
 html {
   margin: 0;
