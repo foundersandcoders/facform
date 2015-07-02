@@ -17,7 +17,7 @@ it("Testing the index.html is sent when requested and statusCode is 200", functi
 });
 
 it("Test to check that user is redirected to index.html with statusCode 302 when not authenticated", function(done){
-  server.inject({method: 'GET', url: '/home'}, function (res) {
+  server.inject({method: 'GET', url: '/dashboard'}, function (res) {
     assert.equal(res.statusCode, '302' );
     done();
   });

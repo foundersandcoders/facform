@@ -58,9 +58,7 @@ var routes = [
   method: 'GET',
   path: '/logout',
   config: {
-    auth: {
-      strategy: 'session'
-    },
+    auth: false,
     handler: handlers.logout
   }
 },
