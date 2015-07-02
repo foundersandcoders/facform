@@ -1,3 +1,4 @@
+
 var db = require('./rethinkdb.js')();
 
 module.exports = [
