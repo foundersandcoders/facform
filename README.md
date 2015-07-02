@@ -37,7 +37,6 @@ More to come...
 **Code Coverage**
 
 + Master Branch minimum code coverage: 100%
-+ Working branches minimum code coverage: 90%
 
 **Testing**
 
@@ -52,6 +51,8 @@ More to come...
 
 #### Production Log
 + Monday 29/6: Voted on project. Pivotal tracker set up. Wireframes created. Repo set up.
++ Tuesday 30/6: Role days. Rethink linked to Heroku.
++ Weds 1/7: Servers, routes, handlers all up. Detailed wireframes up.
 
 ## Basic Idea
 TBC.
