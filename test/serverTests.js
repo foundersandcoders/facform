@@ -16,9 +16,16 @@ it("Testing the index.html is sent when requested and statusCode is 200", functi
   });
 });
 
-it("Test to check that user is redirected to index.html with statusCode 302 when not authenticated", function(done){
+it("Test to check that user is sent to index.html with statusCode 200 when not authenticated", function(done){
   server.inject({method: 'GET', url: '/dashboard'}, function (res) {
-    assert.equal(res.statusCode, '302' );
+    assert.equal(res.statusCode, '200' );
+    done();
+  });
+});
+
+it("Test to check that user is sent to dashboard.html with statusCode 200 when user is authenticated", function(done){
+  server.inject({method: 'GET', url: '/dashboard'}, function (res) {
+    assert.equal(res.statusCode, '200' );
     done();
   });
 });
@@ -30,9 +37,23 @@ it("Test to see authentication redirects to github", function(done){
   });
 });
 
-// it("Test to check that user is redirected to index.html with statusCode 302", function(done){
-//  server.inject({method: 'GET', url: '/logout'}, function (res) {
-//    assert.equal(res.statusCode, '302' );
-//    done();
-//  });
-// });
+it("Test to check that user is sent to challenge.html with statusCode 200", function(done){
+  server.inject({method: 'GET', url: '/join-challenge'}, function(res){
+    assert.equal(res.statusCode, '200');
+    done();
+  });
+});
+
+it("Test to check that user is sent to profile.html with statusCode 200 when authenticated", function(done){
+  server.inject({method: 'GET', url: '/profile'}, function(res){
+    assert.equal(res.statusCode, '200');
+    done();
+  });
+});
+
+it("Test to check that user is redirected to landing page with statusCode 302", function(done){
+ server.inject({method: 'GET', url: '/logout'}, function (res) {
+   assert.equal(res.statusCode, '302' );
+   done();
+ });
+});

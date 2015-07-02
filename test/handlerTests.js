@@ -29,11 +29,25 @@ var loginDispatch = decorate(
   {
     auth: {
       session: {set: function(credentials){expect(credentials).to.exist();}},
-      credentials: "a string",
+      credentials: {profile: {displayName: 'string'}}
     },
   },
   {
-    redirect: function(location){expect(location).to.equal('/dashboard');},
+    view: function(location){expect(location).to.equal('index');},
+  },
+  handlers.login
+);
+
+var loginDispatchWhenAuthenticated = decorate(
+  {
+    auth: {
+      isAuthenticated: true,
+      session: {set: function(credentials){expect(credentials).to.exist();}},
+      credentials: {profile: {displayName: 'string'}}
+    }
+  },
+  {
+    view: function(location){expect(location).to.equal('dashboard');},
   },
   handlers.login
 );
@@ -60,7 +74,11 @@ var homeDispatchNotAuthenticated = decorate(
 
 var homeDispatch = decorate(
   {
-    auth: {isAuthenticated: true},
+    auth: {
+      isAuthenticated: true,
+      credentials: {profile: {displayName: 'string'}}
+    }
+
   },
   {
     view: function(location){expect(location).to.equal('dashboard');}
@@ -68,10 +86,27 @@ var homeDispatch = decorate(
   handlers.dashboard
 );
 
+var profileDispatchWhenAuthenticated = decorate(
+  {
+    auth: {
+      isAuthenticated: true,
+      credentials: {profile: {displayName: 'string'}}
+    }
+  },
+  {
+    view: function(location){expect(location).to.equal('profile');},
+  },
+  handlers.profile
+);
+
 Shot.inject(loginDispatch, {method: 'get', url: '/login'});
+
+Shot.inject(loginDispatchWhenAuthenticated, {method: 'get', url: '/dashboard'});
 
 Shot.inject(landingDispatch, {method: 'get', url: '/'});
 
 Shot.inject(homeDispatchNotAuthenticated, {method: 'get', url: '/dashboard'});
 
 Shot.inject(homeDispatch, {method: 'get', url: '/dashboard'});
+
+Shot.inject(profileDispatchWhenAuthenticated, {method: 'get', url: '/profile'});
