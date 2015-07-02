@@ -1,11 +1,34 @@
-html {
-  padding: 0; }
+.content {
+  background-color: #FFFFFF;
+  text-align: center; }
+  .content h1 {
+    letter-spacing: 2px; }
+  .content .project {
+    border: 2px solid black;
+    display: inline-block; }
+    .content .project img {
+      max-height: 200px;
+      max-width: 200px; }
 
-body {
-  font-family: verdana, sans-serif;
-  background-color: #eee;
-  margin: 0;
-  padding: 0; }
+.nav-bar {
+  background-color: #F5F5F5;
+  height: 70px; }
+
+.profile {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  background-color: #F5F5F5;
+  margin: 50px; }
+  .profile .profile-div {
+    display: inline-block; }
+
+.profile {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  background-color: #F5F5F5;
+  margin: 50px; }
 
 .container {
   height: 100%;
@@ -49,7 +72,7 @@ body {
     outline: 0; }
 
 #two {
-  background-color: #F9F7F6;
+  background-color: #F5F5F5;
   height: 700px;
   text-align: center; }
   #two h2 {
@@ -81,8 +104,7 @@ body {
   margin-left: 30px; }
 
 footer {
-  background-color: #37BEC0;
-  text-align: right;
+  background-color: #F5F5F5;
   height: 40vh; }
 
 #lightbox {
@@ -115,5 +137,14 @@ footer {
   top: 50%;
   left: 50%;
   margin: -150px 0 0 -250px; }
+
+html {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: verdana, sans-serif;
+  margin: 0;
+  padding: 0; }
 
 /*# sourceMappingURL=main.css.map */
