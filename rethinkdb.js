@@ -92,6 +92,7 @@ module.exports = function(config){
     }
   }
 
+
   function readAll(table, cb){
     r.table(table).run(connection, function(err, cursor) {
         if (err) {throw err;}
