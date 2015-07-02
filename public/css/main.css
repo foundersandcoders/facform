@@ -55,7 +55,7 @@
     background-color: #37BEC0;
     border: none;
     font-size: 18px;
-    height: 50px;
+    height: 55px;
     width: 230px;
     margin: 100px auto 0 auto;
     transition-property: background-color, font-weight, letter-spacing;
@@ -78,7 +78,8 @@
   #two h2 {
     padding: 80px;
     font-weight: normal;
-    font-size: 30px; }
+    font-size: 30px;
+    margin: 0; }
   #two #info-container {
     margin: 0 auto;
     padding: 0;
@@ -104,8 +105,10 @@
   margin-left: 30px; }
 
 footer {
-  background-color: #F5F5F5;
+  background-color: #DEDEDE;
   height: 40vh; }
+  footer p {
+    margin: 0; }
 
 #lightbox {
   position: fixed;
@@ -118,7 +121,7 @@ footer {
 #x {
   position: fixed;
   right: 0;
-  -webkit-filter: brightness(265%);
+  -webkit-filter: brightness(205%);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -126,34 +129,43 @@ footer {
   transition: all 1s ease; }
 
 #x:hover {
-  -webkit-filter: brightness(100%); }
+  -webkit-filter: brightness(365%); }
 
 #login-box {
   width: 500px;
   height: 250px;
-  background-color: white;
-  margin: 0 auto;
+  background-color: #F5F5F5;
+  margin: -150px 0 0 -250px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -150px 0 0 -250px;
+  box-shadow: 5px 5px 3px #4A4A4A;
   text-align: center;
   padding-top: 60px; }
+  #login-box p {
+    font-size: 22px;
+    color: #3E4E5A; }
   #login-box img {
-    display: inline; }
+    display: inline;
+    position: absolute;
+    left: 97px;
+    margin-top: 20px; }
   #login-box button {
     color: white;
     display: inline;
     background-color: #3E4E5A;
     border: none;
     font-size: 18px;
-    height: 70px;
-    width: 200px;
+    height: 55px;
+    width: 190px;
     transition-property: background-color, color;
     transition-duration: 0.5s;
     text-transform: uppercase;
     letter-spacing: 3px;
-    box-shadow: 3px 3px 1px black; }
+    box-shadow: 3px 3px 1px black;
+    position: absolute;
+    right: 115px;
+    margin-top: 27px; }
   #login-box button:hover {
     background-color: #DEDEDE;
     color: #0F2920; }
