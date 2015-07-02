@@ -9,7 +9,8 @@
   "scripts": {
     "test": "lab -t 100 -r lcov > lcov.info",
     "start": "nodemon server.js",
-    "jshint": "jshint -c .jshintrc --exclude-path .jshintignore ."
+    "jshint": "jshint -c .jshintrc --exclude-path .jshintignore .",
+    "coverage": "./node_modules/.bin/istanbul cover ./test/*.js"
   },
   "pre-commit": [
     "jshint",
