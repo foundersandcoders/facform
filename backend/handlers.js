@@ -19,7 +19,7 @@ var handlers = {
   },
   dashboard: function(request, reply) {
     if (!request.auth.isAuthenticated) {
-    console.log(request.auth);
+    console.log(request.auth); 
       return reply.view('index');
     }
     var context = {

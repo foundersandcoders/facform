@@ -4,7 +4,8 @@ var hapi = require('hapi'),
     routes = require('./backend/routes.js'), // Check with Abdi and Anit
     handlebars = require('handlebars'),
     hapiAuthCookie = require('hapi-auth-cookie'),
-    bell = require('fixed-bell');
+    bell = require('fixed-bell'),
+    cwRoutes = require('./codewars/cwRoutes.js');
 
 module.exports = server;
 
@@ -38,11 +39,13 @@ server.register(bell, function (err) {
 });
 
 server.route(routes);
+server.route(cwRoutes);
 
 server.register(require('./backend/chat.js'), function (err) {
-
-    if (err) {
-        throw err;
-    }
-    server.start();
+  if (err) {
+    throw err;
+  }
+  server.start(function () {
+    server.log('Server running at: ' + server.info.uri);
+  });
 });
