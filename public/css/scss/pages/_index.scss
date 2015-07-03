@@ -4,21 +4,19 @@
 //   box-sizing: border-box;
 // }
 
-.container {
-  height: 100%;
-  width: 100%;
-}
-
 #one {
   background:url('../images/coffeecoding.jpg');
-  background-size: 100%;
+  background-size: cover;
   height: 700px;
   background-attachment: fixed;
+
 
   #container-top {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    top: 160px;
   }
 
 
@@ -36,15 +34,13 @@
     background-color: $mainGreen;
     border: none;
     font-size: 18px;
-    height: 50px;
+    height: 55px;
     width: 230px;
     margin: 100px auto 0 auto;
     transition-property: background-color, font-weight, letter-spacing;
     transition-duration: 0.5s;
     text-transform: uppercase;
     letter-spacing: 3px;
-    // border-right: 2px solid rgba(61,66,74,0.4);
-    // border-bottom: 2px solid rgba(61,66,74,0.4);
     box-shadow: 3px 3px 1px #398c91;
   }
 
@@ -64,40 +60,76 @@
   background-color: $offWhite;
   height: 700px;
   text-align: center;
+  padding-top: 50px;
 
   h2 {
     padding: 80px;
     font-weight: normal;
     font-size: 30px;
+    margin: 0;
   }
 
   #info-container {
-    margin: 0 auto;
+    margin-top: 50px;
     padding: 0;
-    width: 99%;
+    width: 100%;
     text-align: center;
-    height: 75%;
   }
 
   .three-boxes {
     font-size: 16px;
-    padding: 50px;
+    padding: 0 20px;
     line-height: 180%;
-    height: 270px;
+    // height: 270px;
   }
 
   #info1,#info2,#info3 {
     display: inline-block;
-    width: 30%;
-    height: 100%;
+    width: 24%;
+    height: 50%;
     font-size: 28px;
     text-align: center;
   }
 }
 
 #info1 {
-  margin-right: 30px;
+  margin-right: 50px;
 }
 #info3 {
-  margin-left: 30px;
+  margin-left: 50px;
+}
+
+@media (max-width: 700px) {
+
+  #one {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 24% 0%;
+    background-size: 233%;
+
+    h1#mission {
+      font-size: 29px;
+      margin-bottom: 35px;
+      margin-top: 130px;
+    }
+  }
+
+  #two {
+    h2 {
+      padding: 80px 0;
+    }
+
+    #info1,#info2,#info3 {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      width: 75%;
+      height: 45%;
+
+      .three-boxes {
+        padding: 0;
+      }
+    }
+  }
+
 }
