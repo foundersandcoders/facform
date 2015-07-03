@@ -1,6 +1,6 @@
 var handlebars = require('handlebars');
 var fs = require('fs');
-var DB = require('../rethinkdb.js');
+var DB = require('../rethinkdb.js')();
 
 var handlers = {
   displayLanding: function(request, reply) {
