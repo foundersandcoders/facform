@@ -30,6 +30,11 @@
   background-color: #F5F5F5;
   margin: 50px; }
 
+* {
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box; }
+
 .container {
   height: 100%;
   width: 100%; }
@@ -108,10 +113,23 @@
   #one {
     height: 100vh;
     background-repeat: no-repeat;
-    background-position: 36% 0%; }
+    background-position: 24% 0%;
+    background-size: 233%; }
+    #one h1#mission {
+      font-size: 29px;
+      margin-bottom: 35px;
+      margin-top: 130px; }
 
-  #info1, #info2, #info3 {
-    display: block; } }
+  #two h2 {
+    padding: 80px 0; }
+  #two #info1, #two #info2, #two #info3 {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 75%;
+    height: 45%; }
+    #two #info1 .three-boxes, #two #info2 .three-boxes, #two #info3 .three-boxes {
+      padding: 0; } }
 footer {
   background-color: #DEDEDE;
   height: 40vh; }
