@@ -4,13 +4,13 @@ var routes = [
 
   {
     method: 'GET',
-    path: '/kyu/{kyuLevel}',
+    path: '/kyu/{kyuLevel}/{config?}',
     handler: handlers.newkata
   },
 
   {
-    method: 'POST',
-    path: '/user',
+    method: 'GET',
+    path: '/user/{user}/{route?}',
     handler: handlers.user
   }
 

@@ -6,6 +6,7 @@ var handlers = {
   newkata: function (req, reply) {
     var path = req.params;
     var kyuLevel = path.kyuLevel;
+    var uriConfig = path.config;
     var formObject;
 
     if (kyuLevel === 'random' || kyuLevel === 'default') {
@@ -20,7 +21,7 @@ var handlers = {
     }
 
     var options = {
-      uri: 'https://www.codewars.com/api/v1/code-challenges/javascript/train',
+      uri: uriConfig || 'https://www.codewars.com/api/v1/code-challenges/javascript/train',
       headers: {
         Authorization: tokens.codewars.claire.token,
         // Authorization: tokens.codewars.simon.token,
@@ -32,7 +33,7 @@ var handlers = {
 
     request.post(options, function (err, response, body) {
       if (err) {
-        return err;
+        return reply(err);
       }
       var data = JSON.parse(body);
 
@@ -49,19 +50,20 @@ var handlers = {
     });
   },
 
-  user: function (err, res, body) {
+  user: function (req, reply) {
+    var route = req.params.route || 'https://www.codewars.com/api/v1/users/';
     var options = {
       method: 'GET',
-      uri: 'https://www.codewars.com/api/v1/users/' + tokens.codewars.anni.username,
+      uri: route + req.params.user,
       headers: {
-        Authorization: tokens.codewars.anni.token
+        Authorization: tokens.codewars.claire.token
       }
     };
-    request(options, function (err, res, body) {
+    request(options, function (err, response, body) {
       if (err) {
-        return err;
+        return reply(err);
       }
-      console.log(JSON.parse(body));
+      reply(JSON.parse(body));
     });
   }
 
