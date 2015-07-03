@@ -169,7 +169,6 @@ a {
       margin-bottom: 35px;
       margin-top: 130px; }
 
-<<<<<<< HEAD
   #two h2 {
     padding: 80px 0; }
   #two #info1, #two #info2, #two #info3 {
@@ -180,7 +179,6 @@ a {
     height: 45%; }
     #two #info1 .three-boxes, #two #info2 .three-boxes, #two #info3 .three-boxes {
       padding: 0; } }
-=======
 .nav-bar {
   background-color: #444;
   color: white;
@@ -206,7 +204,6 @@ a {
   text-align: center;
   width: 150px; }
 
->>>>>>> frontend
 footer {
   background-color: #DEDEDE;
   height: 40vh; }
@@ -224,7 +221,7 @@ footer {
 #x {
   position: fixed;
   right: 0;
-  -webkit-filter: brightness(205%);
+  -webkit-filter: brightness(265%);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -232,7 +229,7 @@ footer {
   transition: all 1s ease; }
 
 #x:hover {
-  -webkit-filter: brightness(365%); }
+  -webkit-filter: brightness(364%); }
 
 #login-box {
   width: 500px;
