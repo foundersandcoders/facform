@@ -34,8 +34,9 @@ it("Test to see authentication redirects to github", function(done){
 
 it("Test that we get a kata of level 8kyu", function(done){
   server.inject({method: 'GET', url: '/kyu/8'}, function (res){
-    console.log(res.raw.res.raw);
-    expect(res).to.equal(-8);
+    // console.log(res.raw.res.outputCallbacks[0]());
+    expect(res.result.level).to.equal(-8);
+    // console.log(res.result);
     done();
   });
 });

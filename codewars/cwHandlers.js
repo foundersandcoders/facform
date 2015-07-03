@@ -51,8 +51,10 @@ var handlers = {
       // console.log("All data: ",cwData.level); // Data to return to the page // 
       // console.log("href: ",cwData.link); // The  kata ID  need to be sent to DB plus solved : false 
       // console.log(reply);
-      reply(null, cwData.level);
-      return reply.close();
+      reply(cwData);
+      // reply.view('kata', {
+      //   kataLevel: kyuLevel
+      // });
     });
   },
 
