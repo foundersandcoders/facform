@@ -128,16 +128,13 @@ a {
 
 #two {
   background-color: #F5F5F5;
-  height: 700px;
-  text-align: center;
-  padding-top: 50px; }
+  text-align: center; }
   #two h2 {
-    padding: 80px;
+    padding: 50px;
     font-weight: normal;
     font-size: 30px;
     margin: 0; }
   #two #info-container {
-    margin-top: 50px;
     padding: 0;
     width: 100%;
     text-align: center; }
@@ -167,7 +164,7 @@ a {
     #one h1#mission {
       font-size: 29px;
       margin-bottom: 35px;
-      margin-top: 130px; }
+      margin-top: 10px; }
 
   #two h2 {
     padding: 80px 0; }
