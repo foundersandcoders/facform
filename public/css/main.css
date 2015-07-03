@@ -11,8 +11,7 @@
       max-width: 200px; }
 
 .nav-bar {
-  background-color: #F5F5F5;
-  height: 70px; }
+  background-color: #F5F5F5; }
 
 .profile {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
@@ -23,7 +22,7 @@
   .profile .profile-div {
     display: inline-block; }
 
-.profile {
+.form-div {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
@@ -94,7 +93,7 @@
   #two .three-boxes {
     font-size: 16px;
     padding: 50px;
-    line-height: 180%;
+    line-height: 181%;
     height: 270px; }
   #two #info1, #two #info2, #two #info3 {
     display: inline-block;
