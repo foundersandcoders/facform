@@ -29,15 +29,6 @@
   background-color: #F5F5F5;
   margin: 50px; }
 
-* {
-  border: 1px solid black;
-  padding: 10px;
-  box-sizing: border-box; }
-
-.container {
-  height: 100%;
-  width: 100%; }
-
 #one {
   background: url("../images/coffeecoding.jpg");
   background-size: cover;
@@ -46,7 +37,9 @@
   #one #container-top {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    position: relative;
+    top: 160px; }
   #one h1#mission {
     color: white;
     font-size: 4.5em;
@@ -78,35 +71,34 @@
 #two {
   background-color: #F5F5F5;
   height: 700px;
-  text-align: center; }
+  text-align: center;
+  padding-top: 50px; }
   #two h2 {
     padding: 80px;
     font-weight: normal;
     font-size: 30px;
     margin: 0; }
   #two #info-container {
-    margin: 0 auto;
+    margin-top: 50px;
     padding: 0;
-    width: 99%;
-    text-align: center;
-    height: 75%; }
+    width: 100%;
+    text-align: center; }
   #two .three-boxes {
     font-size: 16px;
-    padding: 50px;
-    line-height: 181%;
-    height: 270px; }
+    padding: 0 20px;
+    line-height: 180%; }
   #two #info1, #two #info2, #two #info3 {
     display: inline-block;
-    width: 30%;
-    height: 100%;
+    width: 24%;
+    height: 50%;
     font-size: 28px;
     text-align: center; }
 
 #info1 {
-  margin-right: 30px; }
+  margin-right: 50px; }
 
 #info3 {
-  margin-left: 30px; }
+  margin-left: 50px; }
 
 @media (max-width: 700px) {
   #one {

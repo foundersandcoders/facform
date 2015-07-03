@@ -1,13 +1,8 @@
-* {
-  border: 1px solid black;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.container {
-  height: 100%;
-  width: 100%;
-}
+// * {
+//   border: 1px solid black;
+//   padding: 10px;
+//   box-sizing: border-box;
+// }
 
 #one {
   background:url('../images/coffeecoding.jpg');
@@ -20,6 +15,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    top: 160px;
   }
 
 
@@ -63,6 +60,7 @@
   background-color: $offWhite;
   height: 700px;
   text-align: center;
+  padding-top: 50px;
 
   h2 {
     padding: 80px;
@@ -72,34 +70,33 @@
   }
 
   #info-container {
-    margin: 0 auto;
+    margin-top: 50px;
     padding: 0;
-    width: 99%;
+    width: 100%;
     text-align: center;
-    height: 75%;
   }
 
   .three-boxes {
     font-size: 16px;
-    padding: 50px;
-    line-height: 181%;
-    height: 270px;
+    padding: 0 20px;
+    line-height: 180%;
+    // height: 270px;
   }
 
   #info1,#info2,#info3 {
     display: inline-block;
-    width: 30%;
-    height: 100%;
+    width: 24%;
+    height: 50%;
     font-size: 28px;
     text-align: center;
   }
 }
 
 #info1 {
-  margin-right: 30px;
+  margin-right: 50px;
 }
 #info3 {
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 @media (max-width: 700px) {
