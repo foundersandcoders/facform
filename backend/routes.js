@@ -1,4 +1,6 @@
 var handlers = require('./handlers.js');
+var db = require('../rethinkdb.js')();
+var chat = require('./chathandlers.js');
 
 var routes = [
 {
@@ -19,6 +21,62 @@ var routes = [
     },
     handler: handlers.login
   }
+},
+{
+	method: 'GET',
+	path: '/chatbox',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.connected
+	}
+},
+{
+	method: 'GET',
+	path: '/createroom',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.createRoom
+	}
+
+},
+{
+	method: 'GET',
+	path: '/checkroom/{roomNumber}',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.checkExist
+	}
+},
+{
+	method: 'GET',
+	path: '/chatbox/{roomNumber}',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: chat.connected
+	}
+},
+{
+	method: 'GET',
+	path: '/createsession/{roomNumber}',
+	config: {
+		auth: {
+			mode: 'try',
+			strategy: 'session'
+		},
+		handler: handlers.createSession
+	}
 },
 {
   method: 'GET',
@@ -67,8 +125,38 @@ var routes = [
   path: '/public/{path*}',
   handler: {
     directory: {
-      path: '../public'
+      path: './public'
     }
+  }
+},
+{
+  method: "GET",
+  path: '/createUser',
+  handler: function(request, reply) {
+    var result = db.create("users", {id: "11", name: "TEST", team: ['nikki', 'simon', 'rub1e']}, reply);
+  }
+},
+
+{
+  method: "GET",
+  path: '/readUser',
+  handler: function(request, reply) {
+    db.readAll("users", reply);
+  }
+
+},
+{
+  method: "GET",
+  path: '/readUserOpts',
+  handler: function(request, reply) {
+    db.read("users", {name: "TEST"}, reply, {team: "simon"});
+  }
+},
+{
+  method: "GET",
+  path: '/update',
+  handler: function(request, reply) {
+    db.update("users", "10", {name: "simon"}, reply);
   }
 }
 ];
