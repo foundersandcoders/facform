@@ -1,7 +1,5 @@
 var request = require('request');
-// var server = require('./server.js');
 var tokens = require('./cwTokens.json');
-// var fs = require('fs');
 
 var handlers = {
 
@@ -9,7 +7,6 @@ var handlers = {
     var path = req.params;
     var kyuLevel = path.kyuLevel;
     var formObject;
-    // console.log(kyuLevel);
 
     if (kyuLevel === 'random' || kyuLevel === 'default') {
       formObject = {
@@ -48,13 +45,7 @@ var handlers = {
         link: data.href
       };
 
-      // console.log("All data: ",cwData.level); // Data to return to the page // 
-      // console.log("href: ",cwData.link); // The  kata ID  need to be sent to DB plus solved : false 
-      // console.log(reply);
       reply(cwData);
-      // reply.view('kata', {
-      //   kataLevel: kyuLevel
-      // });
     });
   },
 
