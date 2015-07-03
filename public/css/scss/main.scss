@@ -1,20 +1,12 @@
-@import 'variables';
-@import 'mixins';
-@import 'dashboard';
-@import 'navbar';
-@import 'profile';
-@import 'new';
-@import 'index';
-@import 'footer';
-@import 'lightbox';
-
-html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'base/base';
+@import 'base/fontello';
+@import 'base/fonts';
+@import 'pages/dashboard';
+@import 'pages/profile';
+@import 'pages/new';
+@import 'pages/index';
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/lightbox';
