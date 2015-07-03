@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="../css/main.css" media="screen" title="main" charset="utf-8">
   <body>
     <div class="nav-bar">
-      <p><a href="/">HOME</a></p>
-      <p>DASHBOARD</p>
-      <p><a href="/profile">PROFILE</a></p>
-      <p><a href="/logout">LOGOUT</a></p>
+      <p class="home"><a href="/">HOME</a></p>
+      <div class="dropdown-toggle">
+        <i class="icon-menu"></i>
+        <div class="dropdown">
+          <p><a href="/profile">PROFILE</a></p>
+          <p><a href="/logout">LOGOUT</a></p>
+        </div>
+      </div>
     </div>
     <div class="content">
       <div class="profile">
