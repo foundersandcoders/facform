@@ -9,7 +9,7 @@ chat.connected = function (request,reply){
 };
 
 chat.checkExist = function(request,reply){
-  DB.find('activities', {id: request.params.roomNumber },function(data){
+  DB.read('activities', {id: request.params.roomNumber },function(data){
     if (data.length>0){reply("true");}
     else {reply("false");}
   });

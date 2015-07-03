@@ -1,6 +1,6 @@
 var handlebars = require('handlebars');
 var fs = require('fs');
-var DB = require('../rethinkdb.js'); 
+var DB = require('../rethinkdb.js');
 
 var handlers = {
   displayLanding: function(request, reply) {
@@ -43,7 +43,7 @@ var handlers = {
   },
   createSession: function (request,reply){
     var chatroomNum = request.params.roomNumber;//Submitted from client-side post request;
-    var user1 = request.params.userID;//Submitted from client-side post request;
+    var user1 = request.auth.credentials.profile.username;
     var kata = request.params.kata;//Submitted from client-side post request;
     DB.create('activities', {id: chatroomNum, messages:[], participants: [user1], kata: kata},function(){
       return reply.redirect('/chatbox/'+chatroomNum);
