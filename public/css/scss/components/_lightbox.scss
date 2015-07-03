@@ -11,12 +11,8 @@
   position: fixed;
   right:0;
 
-  -webkit-filter: brightness(205%);
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
+  -webkit-filter: brightness(265%);
+  @include transition(all 1s ease);
 }
 
 #x:hover {
