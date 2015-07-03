@@ -1,0 +1,32 @@
+.nav-bar {
+  background-color: $darkGrey;
+  color: white;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 40px;
+  .home {
+    float: left;
+  }
+  * {
+    color: white;
+  }
+  .dropdown-toggle {
+    height: 70px;
+    &:hover {
+      .dropdown {
+        display: block;
+      }
+    }
+  }
+}
+
+.dropdown {
+  background-color: $darkGrey;
+  display: none;
+  line-height: 40px;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  text-align: center;
+  width: 150px;
+}
