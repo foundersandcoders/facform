@@ -1,5 +1,3 @@
-var r = require('rethinkdb');
-
 /**
  * export.methods function
  *
@@ -8,13 +6,15 @@ var r = require('rethinkdb');
  * @returns {object} - database methods
  */
 module.exports = function(config){
+  var r = require(config);
+
   var connection = null;
-  var configuration = config || {host: '127.0.0.2', port: 28015, db: 'Facform'};
+  var configuration = {host: '127.0.0.2', port: 28015, db: 'Facform'};
   if(configuration.host === undefined || configuration.port === undefined || configuration.db ===undefined){
     throw "The parameter of the database must be {host: hostname, port: portNumber, db: databaseName}";
   }
 
-  r.connect( configuration, function(err, conn) {
+  r.connect(configuration, function(err, conn) {
       if (err) {
           throw err;
       }
@@ -36,7 +36,6 @@ module.exports = function(config){
       return cb(result);
     });
   }
-
 
   /**
    * update
@@ -92,6 +91,13 @@ module.exports = function(config){
     }
   }
 
+  /**
+  * readAll
+  *
+  * Reads all data from the database
+  * @param {string} table - name of the DB table (Users/chats etc)
+  * @param {function} cb - a callback function
+  */
 
   function readAll(table, cb){
     r.table(table).run(connection, function(err, cursor) {

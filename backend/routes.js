@@ -1,6 +1,5 @@
 var handlers = require('./handlers.js');
-var db = require('../rethinkdb.js')();
-
+var db = require('../rethinkdb.js')("rethinkdb");
 
 var routes = [
 {

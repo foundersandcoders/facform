@@ -1,5 +1,5 @@
 
-var db = require('./rethinkdb.js')();
+var db = require('./rethinkdb.js')("rethinkdb");
 
 module.exports = [
 

@@ -12,7 +12,7 @@ fakedb.connect = function(config, callback) {
 };
 
 fakedb.table = function(name) {
-    return this;
+  return this;
 };
 
 fakedb.insert = function(data) {
@@ -20,22 +20,37 @@ fakedb.insert = function(data) {
     return this;
 };
 
-fakedb.filter = function(data) {
-  var match;
-  var keyLength = Object.keys(data).length;
-  var counter = 0;
-  var counter2 = 0;
-  fakedb.result = this.db.filter(function(elem) {
-    match = true;
-    for (var key in data) {
-      if (elem[key] !== data[key]) {
-        match = false;
-        return match;
+fakedb.get = function(id) {
+  var newdb = {};
+  newdb.toUpdate = fakedb.db.filter(function(element){
+    return element.id === id;
+  });
+  newdb.keep = fakedb.db.filter(function(element){
+    return element.id !== id;
+  });
+
+  newdb.update = function(options) {
+    newdb.toUpdate.forEach(function(element){
+      for (var key in options){
+        element[key] = options[key];
       }
-      if (++counter === keyLength && match === true) {
-        return match;
+    });
+    fakedb.db = newdb.toUpdate.concat(newdb.keep);
+    return fakedb;
+  };
+
+  return newdb;
+};
+
+fakedb.filter = function(data) {
+
+  fakedb.result = this.db.filter(function(elem) {
+    for (var key in data) {
+      if (!elem[key] || elem[key] !== data[key]) {
+        return false;
       }
     }
+    return true;
   });
 
   this.db = fakedb.result;
@@ -43,11 +58,11 @@ fakedb.filter = function(data) {
 
 };
 
-fakedb.run = function(connection, callback) {
-  var cursor  = this.db;
+fakedb.run = function run(connection, callback) {
+  var cursor  = {};
   cursor.toArray = function(cb){
     cb(null, this.db);
-  };
+  }.bind(this);
 
   if (connection) {
     return callback(null, cursor);

@@ -43,3 +43,32 @@
 2015-07-02T10:12:58.398703658 0.141346s notice: Listening on addresses: 127.0.0.1, ::1
 2015-07-02T10:12:58.398705050 0.141347s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2015-07-02T10:12:58.398708890 0.141351s notice: Server ready, "Nikhilas_MacBook_Pro_local_v70" 067d200e-90b4-42ac-b881-58e38b515594
+2015-07-03T12:44:10.948934000 0.892133s notice: Running rethinkdb 2.0.3 (CLANG 4.2 (clang-425.0.28))...
+2015-07-03T12:44:11.286090000 1.229285s notice: Running on Darwin 14.3.0 x86_64
+2015-07-03T12:44:11.286151000 1.229345s notice: Loading data from directory /Users/Nikhila/Documents/foundersandcoders/Week8/facform/rethinkdb_data
+2015-07-03T12:44:12.739486000 2.682680s info: Automatically using cache size of 100 MB
+2015-07-03T12:44:12.739497000 2.682690s warn: Cache size is larger than available memory.
+2015-07-03T12:44:12.739504000 2.682697s warn: Cache size is very low and may impact performance.
+2015-07-03T12:44:12.782063000 2.725256s notice: Listening for intracluster connections on port 29015
+2015-07-03T12:44:12.784392000 2.727586s notice: Listening for client driver connections on port 28015
+2015-07-03T12:44:12.784531000 2.727724s notice: Listening for administrative HTTP connections on port 8080
+2015-07-03T12:44:12.784539000 2.727733s notice: Listening on addresses: 127.0.0.1, 127.0.0.2, 127.0.0.3, ::1
+2015-07-03T12:44:12.784544000 2.727737s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-07-03T12:44:12.784550000 2.727743s notice: Server ready, "Nikhilas_MacBook_Pro_local_v70" 067d200e-90b4-42ac-b881-58e38b515594
+2015-07-03T12:50:31.216207000 381.169498s notice: Server got SIGINT from pid 271, uid 501; shutting down...
+2015-07-03T12:50:31.283807000 381.237098s notice: Shutting down client connections...
+2015-07-03T12:50:31.283993000 381.237283s notice: All client connections closed.
+2015-07-03T12:50:31.284007000 381.237297s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-07-03T12:50:31.407405000 381.360696s notice: Storage engine shut down.
+2015-07-03T14:34:10.337797000 0.138313s notice: Running rethinkdb 2.0.3 (CLANG 4.2 (clang-425.0.28))...
+2015-07-03T14:34:10.517663000 0.318175s notice: Running on Darwin 14.3.0 x86_64
+2015-07-03T14:34:10.517738000 0.318249s notice: Loading data from directory /Users/Nikhila/Documents/foundersandcoders/Week8/facform/rethinkdb_data
+2015-07-03T14:34:12.222191000 2.022773s info: Automatically using cache size of 100 MB
+2015-07-03T14:34:12.222200000 2.022781s warn: Cache size does not leave much memory for server and query overhead (available memory: 264 MB).
+2015-07-03T14:34:12.222204000 2.022786s warn: Cache size is very low and may impact performance.
+2015-07-03T14:34:12.258016000 2.058598s notice: Listening for intracluster connections on port 29015
+2015-07-03T14:34:12.271497000 2.072079s notice: Listening for client driver connections on port 28015
+2015-07-03T14:34:12.271627000 2.072209s notice: Listening for administrative HTTP connections on port 8080
+2015-07-03T14:34:12.271639000 2.072220s notice: Listening on addresses: 127.0.0.1, 127.0.0.2, 127.0.0.3, ::1
+2015-07-03T14:34:12.271645000 2.072227s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-07-03T14:34:12.271652000 2.072234s notice: Server ready, "Nikhilas_MacBook_Pro_local_v70" 067d200e-90b4-42ac-b881-58e38b515594
