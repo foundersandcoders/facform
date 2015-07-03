@@ -17,8 +17,7 @@ var handlers = {
     }
   },
   dashboard: function(request, reply) {
-    if (!request.auth.isAuthenticated) {
-    console.log(request.auth);  
+    if (!request.auth.isAuthenticated) { 
       return reply.view('index');
     }
     var context = {
@@ -33,7 +32,7 @@ var handlers = {
       reply.view('index', { name: 'stranger!' });
     }
   },
-  joinChallenge: function(request, reply) {   
+  joinChallenge: function(request, reply) {
     return reply.view('challenge');
   },
   logout: function(request, reply) {
@@ -43,6 +42,3 @@ var handlers = {
 };
 
 module.exports = handlers;
-
-
-
