@@ -5,11 +5,11 @@ var tokens = require('./cwTokens.json');
 
 var handlers = {
 
-  newkata: function (req, res) {
+  newkata: function (req, reply) {
     var path = req.params;
     var kyuLevel = path.kyuLevel;
     var formObject;
-    console.log(kyuLevel);
+    // console.log(kyuLevel);
 
     if (kyuLevel === 'random' || kyuLevel === 'default') {
       formObject = {
@@ -30,11 +30,29 @@ var handlers = {
       },
       form: formObject
     };
-    request.post(options, function (err, res, body) {
+
+    var cwData = {};
+
+    request.post(options, function (err, response, body) {
       if (err) {
         return err;
       }
-      console.log(JSON.parse(body));
+      var data = JSON.parse(body);
+
+      cwData = {
+        name: data.name,
+        level: data.rank,
+        description: data.description,
+        id: data.session.projectId,
+        setup: data.session.setup,
+        link: data.href
+      };
+
+      // console.log("All data: ",cwData.level); // Data to return to the page // 
+      // console.log("href: ",cwData.link); // The  kata ID  need to be sent to DB plus solved : false 
+      // console.log(reply);
+      reply(null, cwData.level);
+      return reply.close();
     });
   },
 

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "lab -t 100 -r lcov > lcov.info",
+    "test": "lab -t 100",
     "start": "nodemon server.js",
     "jshint": "jshint -c .jshintrc --exclude-path .jshintignore ."
   },
