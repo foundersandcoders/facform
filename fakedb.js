@@ -1,6 +1,7 @@
 var fakedb = {};
 
 fakedb.db = [];
+fakedb.result = [];
 
 fakedb.connect = function(config, callback) {
   if (config) {
@@ -21,15 +22,25 @@ fakedb.insert = function(data) {
 
 fakedb.filter = function(data) {
   var match;
-  var result = this.db.filter(function(elem) {
+  var keyLength = Object.keys(data).length;
+  var counter = 0;
+  var counter2 = 0;
+  fakedb.result = this.db.filter(function(elem) {
     match = true;
     for (var key in data) {
       if (elem[key] !== data[key]) {
         match = false;
+        return match;
+      }
+      if (++counter === keyLength && match === true) {
+        return match;
       }
     }
-    return match === true;
   });
+
+  this.db = fakedb.result;
+  return this;
+
 };
 
 fakedb.run = function(connection, callback) {
