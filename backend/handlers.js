@@ -1,5 +1,6 @@
 var handlebars = require('handlebars');
 var fs = require('fs');
+var DB = require('../rethinkdb.js'); 
 
 var handlers = {
   displayLanding: function(request, reply) {
@@ -18,7 +19,7 @@ var handlers = {
   },
   dashboard: function(request, reply) {
     if (!request.auth.isAuthenticated) {
-    console.log(request.auth);  
+    console.log(request.auth);
       return reply.view('index');
     }
     var context = {
@@ -33,16 +34,21 @@ var handlers = {
       reply.view('index', { name: 'stranger!' });
     }
   },
-  joinChallenge: function(request, reply) {   
+  joinChallenge: function(request, reply) {
     return reply.view('challenge');
   },
   logout: function(request, reply) {
     request.auth.session.clear();
     return reply.redirect('/');
+  },
+  createSession: function (request,reply){
+    var chatroomNum = request.params.roomNumber;//Submitted from client-side post request;
+    var user1 = request.params.userID;//Submitted from client-side post request;
+    var kata = request.params.kata;//Submitted from client-side post request;
+    DB.create('activities', {id: chatroomNum, messages:[], participants: [user1], kata: kata},function(){
+      return reply.redirect('/chatbox/'+chatroomNum);
+    });
   }
 };
 
 module.exports = handlers;
-
-
-

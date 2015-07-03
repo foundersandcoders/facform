@@ -22,7 +22,7 @@ server.views({
 server.register(hapiAuthCookie, function (err) {
   server.auth.strategy('session', 'cookie', {
     password: 'password',
-    cookie: 'sid-example'
+    cookie: 'sid-example',
   });
 });
 
@@ -39,6 +39,10 @@ server.register(bell, function (err) {
 
 server.route(routes);
 
-server.start(function () {
-  server.log('Server running at: ' + server.info.uri);
+server.register(require('./backend/chat.js'), function (err) {
+
+    if (err) {
+        throw err;
+    }
+    server.start();
 });

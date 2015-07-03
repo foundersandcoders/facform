@@ -7,9 +7,14 @@
     "test": "test"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "lab -t 100 && lab -t 100 -r lcov > lcov.info",
+=======
+    "test": "lab -t 100",
+>>>>>>> chatbox
     "start": "nodemon server.js",
-    "jshint": "jshint -c .jshintrc --exclude-path .jshintignore ."
+    "jshint": "jshint -c .jshintrc --exclude-path .jshintignore .",
+    "coverage": "./node_modules/.bin/istanbul cover ./test/*.js && ./node_modules/.bin/istanbul check-coverage --statements 90 --functions 100 --lines 90 --branches 85"
   },
   "pre-commit": [
     "jshint",
@@ -52,7 +57,11 @@
     "hoek": "^2.14.0",
     "joi": "^6.5.0",
     "jsdoc": "^3.3.2",
+<<<<<<< HEAD
     "rethinkdb": "^2.0.2",
+=======
+    "socket.io": "^1.3.5",
+>>>>>>> chatbox
     "wreck": "^5.6.0"
   }
 }
