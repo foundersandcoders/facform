@@ -12,6 +12,9 @@ var handlers = {
   login: function(request, reply) {
     if(request.auth.isAuthenticated) {
       request.auth.session.set(request.auth.credentials);
+      DB.create('users', request.auth.credentials.profile, function(data){
+        console.log(request.auth.credentials.profile.displayName + ' added to database');
+      });
       reply.view('dashboard', {name: request.auth.credentials.profile.displayName});
     } else {
       reply.view('index');
@@ -19,7 +22,7 @@ var handlers = {
   },
   dashboard: function(request, reply) {
     if (!request.auth.isAuthenticated) {
-    console.log(request.auth); 
+    console.log(request.auth);
       return reply.view('index');
     }
     var context = {
