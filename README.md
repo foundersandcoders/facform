@@ -59,3 +59,11 @@ TBC.
 ## Tech Used
 
 TBC.
+#### Codewars
+We are using the Codewars API to allow a user to select a kata to work on. A user has a choice of kyu levels 1-8, or 'default' to level up on their account, or 'random'. The user can also access their own profile information. The endpoints are as follows:
++ /kyu/{level}, where 'level' can be a number between 1 and 8, or 'default', or 'random'
++ /user/{username}
+
+Currently the API calls have to be authenticated with a user's own personal API key, which has to be taken from their own account settings. For the time being, the API key has been set to a specific value, though there will be an error as it seems to expire after a few hours.
+
+We aim to be able to extract a kata description, as well as the kata setup and the url, in order to enable people to pair on code using a collaborative editor.
