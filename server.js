@@ -4,7 +4,7 @@ var hapi = require('hapi'),
     routes = require('./backend/routes.js'), // Check with Abdi and Anit
     handlebars = require('handlebars'),
     hapiAuthCookie = require('hapi-auth-cookie'),
-    bell = require('fixed-bell'),
+    bell = require('bell');
     cwRoutes = require('./codewars/cwRoutes.js');
 
 module.exports = server;
